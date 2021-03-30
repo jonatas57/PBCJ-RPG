@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: 659d5f1477c40ff4ba471f4c56cfe9ae
+guid: a693dff8366b246439b0bb6f6a67c025
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7639527794057896207
-    second: EnemyWalk_1_0
+      213: -8227546954408941770
+    second: HealthBar_0
   - first:
-      213: 2972665890212285323
-    second: EnemyWalk_1_1
+      213: -3178617384780871938
+    second: HealthBar_1
   - first:
-      213: -8811175358510529206
-    second: EnemyWalk_1_2
+      213: 5032351099696674128
+    second: HealthBar_2
   - first:
-      213: 4013169779217993646
-    second: EnemyWalk_1_3
+      213: 5856585005746452560
+    second: HealthBar_3
   - first:
-      213: -6848614527685231768
-    second: EnemyWalk_1_4
+      213: -6503669339106013020
+    second: HealthBar_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -102,13 +102,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EnemyWalk_1_0
+      name: HealthBar_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
+        x: 108
+        y: 471
+        width: 470
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -116,20 +116,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f016b808d0e050a60800000000000000
-      internalID: 7639527794057896207
+      spriteID: 637ab99e2a1e1dd80800000000000000
+      internalID: -8227546954408941770
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyWalk_1_1
+      name: HealthBar_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
+        x: 108
+        y: 388
+        width: 470
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8b060690e7014920800000000000000
-      internalID: 2972665890212285323
+      spriteID: ef6414f545843e3d0800000000000000
+      internalID: -3178617384780871938
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyWalk_1_2
+      name: HealthBar_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
+        x: 108
+        y: 315
+        width: 470
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a450e4ee1ba68b580800000000000000
-      internalID: -8811175358510529206
+      spriteID: 0557772a9a086d540800000000000000
+      internalID: 5032351099696674128
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyWalk_1_3
+      name: HealthBar_3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
+        x: 115
+        y: 222
+        width: 456
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eaf0f99c6a4a1b730800000000000000
-      internalID: 4013169779217993646
+      spriteID: 05875608805c64150800000000000000
+      internalID: 5856585005746452560
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyWalk_1_4
+      name: HealthBar_4
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
+        x: 98
+        y: 92
+        width: 480
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86bfdb16f55d4f0a0800000000000000
-      internalID: -6848614527685231768
+      spriteID: 4a09cf9a1335eb5a0800000000000000
+      internalID: -6503669339106013020
       vertices: []
       indices: 
       edges: []
