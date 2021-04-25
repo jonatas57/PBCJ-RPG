@@ -17,7 +17,7 @@ public class Inimigo : Caractere {
 		ResetCaractere();
 	}
 
-	private void OnCollisionEnter2D(collision2D collision) {
+	private void OnCollisionEnter2D(Collision2D collision) {
 		if (collision.gameObject.CompareTag("Player")) {
 			Player player = collision.gameObject.GetComponent<Player>();
 			if (danoCoroutine == null) {
@@ -37,6 +37,7 @@ public class Inimigo : Caractere {
 
 	public override IEnumerator DanoCaractere(int dano, float intervalo) {
 		while (true) {
+			StartCoroutine(FlickerCaractere());
 			pontosVida = pontosVida - dano;
 			if (pontosVida <= float.Epsilon) {
 				KillCaractere();

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: anda-para-norte
+  m_Name: atira-para-sul
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,10 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 949440331131266897, guid: e9212c3dfaeb15043995ad85c1edaac9,
+      value: {fileID: -1915074074083152070, guid: c42cb602ffbdc5e4eaae5e09d2e776ff,
         type: 3}
     - time: 0.083333336
-      value: {fileID: -2545933035311072630, guid: e9212c3dfaeb15043995ad85c1edaac9,
+      value: {fileID: -6300600211072343036, guid: c42cb602ffbdc5e4eaae5e09d2e776ff,
+        type: 3}
+    - time: 0.16666667
+      value: {fileID: -6836329566414945601, guid: c42cb602ffbdc5e4eaae5e09d2e776ff,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -44,14 +47,15 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 949440331131266897, guid: e9212c3dfaeb15043995ad85c1edaac9, type: 3}
-    - {fileID: -2545933035311072630, guid: e9212c3dfaeb15043995ad85c1edaac9, type: 3}
+    - {fileID: -1915074074083152070, guid: c42cb602ffbdc5e4eaae5e09d2e776ff, type: 3}
+    - {fileID: -6300600211072343036, guid: c42cb602ffbdc5e4eaae5e09d2e776ff, type: 3}
+    - {fileID: -6836329566414945601, guid: c42cb602ffbdc5e4eaae5e09d2e776ff, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.16666667
+    m_StopTime: 0.25
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
