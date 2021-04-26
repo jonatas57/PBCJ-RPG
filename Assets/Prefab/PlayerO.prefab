@@ -202,3 +202,6 @@ MonoBehaviour:
     type: 3}
   tamanhoPiscina: 7
   velocidadeArma: 2
+  novaMunicaoPrefab: {fileID: 2061466556157493598, guid: f80c5be3a216909429cb8efa73190de5,
+    type: 3}
+  animator: {fileID: 0}

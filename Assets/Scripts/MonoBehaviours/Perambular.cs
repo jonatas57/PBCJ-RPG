@@ -70,7 +70,7 @@ public class Perambular : MonoBehaviour {
 	void EscolheNovoPontoFinal() {
 		anguloAtual += Random.Range(0, 360);
 		anguloAtual = Mathf.Repeat(anguloAtual, 360);
-		posicaoFinal += AnguloParaVector3(anguloAtual);
+		posicaoFinal = transform.position + AnguloParaVector3(anguloAtual);
 	}
 
 	Vector3 AnguloParaVector3(float anguloEntradaGraus) {

@@ -7,12 +7,11 @@ public class Armas : MonoBehaviour {
   static List<GameObject> municaoPiscina;      // Piscina de Munição
   public int tamanhoPiscina;                   // Tamanho da Piscina
 	public float velocidadeArma;                 // velocidade da Munição
+	public GameObject novaMunicaoPrefab;
 
 	bool atirando;
 	[HideInInspector]
 	public Animator animator;
-
-	Camera cameraLocal;
 
 	float slopePositivo;
 	float slopeNegativo;
@@ -27,18 +26,17 @@ public class Armas : MonoBehaviour {
 	private void Start() {
 		animator = GetComponent<Animator>();
 		atirando = false;
-		cameraLocal = Camera.main;
-		Vector2 abaixoEsquerda = cameraLocal.ScreenToWorldPoint(new Vector2(0, 0));
-		Vector2 acimaDireita = cameraLocal.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
-		Vector2 acimaEsquerda = cameraLocal.ScreenToWorldPoint(new Vector2(0, Screen.height));
-		Vector2 abaixoDireita = cameraLocal.ScreenToWorldPoint(new Vector2(Screen.width, 0));
+		Vector2 abaixoEsquerda = Camera.main.ScreenToWorldPoint(new Vector2(0, 0));
+		Vector2 acimaDireita = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
+		Vector2 acimaEsquerda = Camera.main.ScreenToWorldPoint(new Vector2(0, Screen.height));
+		Vector2 abaixoDireita = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0));
 		slopePositivo = PegaSlope(abaixoEsquerda, acimaDireita);
 		slopeNegativo = PegaSlope(acimaEsquerda, abaixoDireita);
 	}
 
 	bool AcimaSlopePositivo(Vector2 posicaoEntrada) {
 		Vector2 posicaoPlayer = gameObject.transform.position;
-		Vector2 posicaoMouse = cameraLocal.ScreenToWorldPoint(posicaoEntrada);
+		Vector2 posicaoMouse = Camera.main.ScreenToWorldPoint(posicaoEntrada);
 		float interseccaoY = posicaoPlayer.y - slopePositivo * posicaoPlayer.x;
 		float entradaInterseccao = posicaoMouse.y - slopePositivo * posicaoMouse.x;
 		return entradaInterseccao > interseccaoY;
@@ -46,7 +44,7 @@ public class Armas : MonoBehaviour {
 
 	bool AcimaSlopeNegativo(Vector2 posicaoEntrada) {
 		Vector2 posicaoPlayer = gameObject.transform.position;
-		Vector2 posicaoMouse = cameraLocal.ScreenToWorldPoint(posicaoEntrada);
+		Vector2 posicaoMouse = Camera.main.ScreenToWorldPoint(posicaoEntrada);
 		float interseccaoY = posicaoPlayer.y - slopeNegativo * posicaoPlayer.x;
 		float entradaInterseccao = posicaoMouse.y - slopeNegativo * posicaoMouse.x;
 		return entradaInterseccao > interseccaoY;
@@ -115,7 +113,22 @@ public class Armas : MonoBehaviour {
 		return (ponto2.y - ponto1.y) / (ponto2.x - ponto1.x);
 	}
 
+	void ResetPiscina() {
+		municaoPiscina = new List<GameObject>();
+		for (int i = 0;i < tamanhoPiscina;i++) {
+			GameObject municaoO = Instantiate(municaoPrefab);
+			municaoO.SetActive(false);
+			municaoPiscina.Add(municaoO);
+		}
+	}
+
   GameObject SpawnMunicao(Vector3 posicao) {
+    foreach (GameObject municao in municaoPiscina) {
+			if (municao == null) {
+				ResetPiscina();
+				break;
+			}
+		}
     foreach (GameObject municao in municaoPiscina) {
       if (municao.activeSelf == false) {
         municao.SetActive(true);
@@ -140,4 +153,8 @@ public class Armas : MonoBehaviour {
 		municaoPiscina = null;
 	}
 
+	public void UpgradeArma() {
+		municaoPrefab = novaMunicaoPrefab;
+		ResetPiscina();
+	}
 }

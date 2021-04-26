@@ -150,6 +150,9 @@ MonoBehaviour:
   inicioPontosDano: 2
   MaxPontosDano: 2
   forcaDano: 1
+  dropPrefab: {fileID: 7187513693827778573, guid: d967eed67ba8ce74985c5ade8c91d20a,
+    type: 3}
+  probabilidadeDrop: 0.25
 --- !u!58 &2686625388324381620
 CircleCollider2D:
   m_ObjectHideFlags: 0

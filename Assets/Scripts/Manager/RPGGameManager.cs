@@ -28,7 +28,13 @@ public class RPGGameManager : MonoBehaviour {
 
 	public void SpawnPlayer() {
 		if (playerPontoSpawn != null) {
-			GameObject player = playerPontoSpawn.SpawnO();
+			GameObject player = CenaManager.instancia.player;
+			if (player == null) {
+				player = playerPontoSpawn.SpawnO();
+				CenaManager.instancia.player = player;
+				DontDestroyOnLoad(CenaManager.instancia.player);
+			}
+			player.transform.position = playerPontoSpawn.transform.position;
 			cameraManager.virtualCamera.Follow = player.transform;
 		}
 	}

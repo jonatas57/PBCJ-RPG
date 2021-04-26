@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Inimigo : Caractere {
-	float pontosVida;            // equivalente à saúde do inimigo
-	public int forcaDano;        // poder de dano
+	float pontosVida;              // equivalente à saúde do inimigo
+	public int forcaDano;          // poder de dano
+	public GameObject dropPrefab;  // prefab da item a aparecer quando inimigo morre
+	public float probabilidadeDrop;// probabilidade de um item aparecer
 
 	Coroutine danoCoroutine;
 
@@ -52,6 +54,19 @@ public class Inimigo : Caractere {
 
 	public override void ResetCaractere() {
 		pontosVida = inicioPontosDano;
+	}
+
+	public override void KillCaractere() {
+		float prob = Random.Range(0.0f, 1.0f);
+		if (prob <= probabilidadeDrop) {
+			SpawnDrop();
+		}
+		base.KillCaractere();
+	}
+
+	void SpawnDrop() {
+		GameObject drop = Instantiate(dropPrefab);
+		drop.transform.position = transform.position;
 	}
 
 	// Update is called once per frame
